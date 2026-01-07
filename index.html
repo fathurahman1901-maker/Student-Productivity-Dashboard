@@ -1,0 +1,95 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Student Productivity Dashboard</h1>
+    </header>
+    
+    <main>
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="glass-card">
+            <h2>Productivity Overview</h2>
+            <div class="stats">
+                <div class="stat">
+                    <span id="total-tasks">0</span>
+                    <p>Total Tasks</p>
+                </div>
+                <div class="stat">
+                    <span id="completed-tasks">0</span>
+                    <p>Completed</p>
+                </div>
+                <div class="stat">
+                    <span id="pending-tasks">0</span>
+                    <p>Pending</p>
+                </div>
+            </div>
+            <div class="progress-container">
+                <label>Completion Progress</label>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <span id="progress-percent">0%</span>
+            </div>
+        </section>
+        
+        <!-- Motivational Quote -->
+        <section id="quote" class="glass-card">
+            <p id="motivational-quote"></p>
+        </section>
+        
+        <!-- To-Do List Section -->
+        <section id="todo-section" class="glass-card">
+            <h2>To-Do List</h2>
+            
+            <!-- Add Task Form -->
+            <form id="add-task-form">
+                <input type="text" id="task-title" placeholder="Task Title" required>
+                <select id="task-priority" required>
+                    <option value="">Select Priority</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <input type="date" id="task-deadline" required>
+                <button type="submit">Add Task</button>
+            </form>
+            
+            <!-- Filter and Sort -->
+            <div class="controls">
+                <div class="filter">
+                    <label>Filter:</label>
+                    <select id="filter-select">
+                        <option value="all">All</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <div class="sort">
+                    <label>Sort by:</label>
+                    <select id="sort-select">
+                        <option value="deadline">Deadline</option>
+                        <option value="priority">Priority</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Task List -->
+            <ul id="task-list"></ul>
+            
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state">
+                <p>🎉 No tasks yet! Add your first task to get started.</p>
+            </div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
