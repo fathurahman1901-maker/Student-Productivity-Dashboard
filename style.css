@@ -1,0 +1,266 @@
+/* style.css */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+}
+
+/* Dashboard */
+#dashboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stat {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.stat span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.stat p {
+    color: #ddd;
+}
+
+.progress-container {
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50, #8bc34a);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#progress-percent {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Quote */
+#quote {
+    text-align: center;
+    font-style: italic;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* To-Do Section */
+#todo-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#add-task-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#add-task-form input, #add-task-form select, #add-task-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 150px;
+}
+
+#add-task-form button {
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#add-task-form button:hover {
+    background: #45a049;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.controls div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls select {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Task List */
+#task-list {
+    list-style: none;
+}
+
+.task-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.task-item.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.task-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.task-details {
+    flex: 1;
+}
+
+.task-title {
+    font-weight: bold;
+    color: #fff;
+}
+
+.task-meta {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.task-priority {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.priority-low { background: #8bc34a; color: #fff; }
+.priority-medium { background: #ff9800; color: #fff; }
+.priority-high { background: #f44336; color: #fff; }
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.complete-btn { color: #4caf50; }
+.edit-btn { color: #2196f3; }
+.delete-btn { color: #f44336; }
+
+.task-actions button:hover {
+    opacity: 0.7;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+    }
+    
+    #add-task-form {
+        flex-direction: column;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .task-actions {
+        align-self: flex-end;
+    }
+}
